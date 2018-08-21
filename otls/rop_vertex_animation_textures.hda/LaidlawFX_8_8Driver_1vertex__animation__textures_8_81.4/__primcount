@@ -1,0 +1,27 @@
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+import hou
+
+# =============================================================================
+# FUNCTIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#    Name: check(node)
+#  Raises: N/A
+# Returns: None
+#    Desc: Detects the prim count based on the current frame.
+# -----------------------------------------------------------------------------
+
+def check(node):
+    polyNode    = hou.node("objects/TEXTURE/OUT_MESH")
+    geo         = polyNode.geometry()
+    count       = geo.countPrimType('Poly')
+
+    if count != 0:
+        node.parm('target_polycount').deleteAllKeyframes()
+        node.parm('target_polycount').set(count)
+
+

@@ -1,0 +1,45 @@
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+import hou
+
+# =============================================================================
+# FUNCTIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#    Name: Project()
+#  Raises: N/A
+# Returns: None
+#    Desc: Defines what the asset should be called.
+# -----------------------------------------------------------------------------
+
+def Project(node):
+    project           = node.evalParm("project")
+    project_enable    = node.evalParm("enable_project")
+    
+    if project_enable == 1 and project != "" :
+        project       = project           
+    else :
+        project       = hou.hscriptExpression('$JOB')  
+    
+    return project
+    
+# -----------------------------------------------------------------------------
+#    Name: Asset()
+#  Raises: N/A
+# Returns: None
+#    Desc: Defines what the asset should be called.
+# -----------------------------------------------------------------------------
+
+def Asset(node):
+    asset           = node.evalParm("asset")
+    asset_enable    = node.evalParm("enable_asset")
+    
+    if asset_enable == 1 and asset != "" :
+        asset       = asset           
+    else :
+        asset       = str(node)  
+    
+    return asset

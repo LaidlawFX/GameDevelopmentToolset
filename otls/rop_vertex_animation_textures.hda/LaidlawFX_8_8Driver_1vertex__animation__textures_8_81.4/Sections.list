@@ -1,0 +1,22 @@
+""
+DialogScript	DialogScript
+CreateScript	CreateScript
+TypePropertiesOptions	TypePropertiesOptions
+Help	Help
+Tools.shelf	Tools.shelf
+InternalFileOptions	InternalFileOptions
+Contents.gz	Contents.gz
+DiveTarget	DiveTarget
+EditableNodes	EditableNodes
+OnCreated	OnCreated
+PythonModule	PythonModule
+__play	_play
+__explore	_explore
+__presets	_presets
+__material	_material
+__shader	_shader
+__depth	_depth
+__primcount	_primcount
+__path	_path
+__data	_data
+ExtraFileOptions	ExtraFileOptions

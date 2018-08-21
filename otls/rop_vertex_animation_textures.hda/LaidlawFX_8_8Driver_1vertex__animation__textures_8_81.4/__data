@@ -1,0 +1,70 @@
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+import hou
+import os
+import json
+
+# =============================================================================
+# FUNCTIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#    Name: update(node)
+#  Raises: N/A
+# Returns: None
+#    Desc: Updates material values.
+# -----------------------------------------------------------------------------
+
+def update(node):
+    #print 'Updating Json'
+    path            = os.path.abspath(node.evalParm('path_data'))
+    directory       = os.path.dirname(path)
+    #remove file if exist
+    try:
+        os.remove(path)
+    except OSError:
+        pass       
+    #create directory if it does not exist    
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+    engine       = str(node.evalParm('engine'))
+    method       = node.evalParm('method')
+    asset        = node.evalParm('asset')        
+    _numOfFrames = str(node.evalParm('num_frames'))
+    _speed       = str(node.evalParm('speed'))
+    _posMax      = str(node.evalParm('max_min_pos1'))
+    _posMin      = str(node.evalParm('max_min_pos2'))
+    _scaleMax    = str(node.evalParm('max_min_scale1'))
+    _scaleMin    = str(node.evalParm('max_min_scale2'))
+    _pivMax      = str(node.evalParm('max_min_piv1'))
+    _pivMin      = str(node.evalParm('max_min_piv2'))
+    _packNorm    = str(node.evalParm('pack_norm'))
+    _packPscale  = str(node.evalParm('pack_pscale'))
+    _normData    = str(node.evalParm('normalize_data'))
+    _width       = str(node.evalParm('width_height1'))
+    _height      = str(node.evalParm('width_height2'))        
+       
+    data = {}  
+    data[asset] = []  
+    data[asset].append({ 
+        '_numOfFrames'  : _numOfFrames,
+        '_speed'        : _speed,
+        '_posMax'       : _posMax,
+        '_posMin'       : _posMin,
+        '_scaleMax'     : _scaleMax,
+        '_scaleMin'     : _scaleMin,
+        '_pivMax'       : _pivMax,
+        '_pivMin'       : _pivMin,
+        '_packNorm'     : _packNorm,
+        '_packPscale'   : _packPscale,
+        '_normData'     : _normData,
+        '_width'        : _width,
+        '_height'       : _height         
+    })
+    with open(path, 'w') as f:  
+        json.dump(data, f, indent=4, sort_keys=True)
+                  
+                  

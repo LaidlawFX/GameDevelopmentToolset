@@ -1,0 +1,42 @@
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+import hou
+import subprocess
+import os
+import platform
+
+# =============================================================================
+# FUNCTIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#    Name: path(node,path)
+#  Raises: N/A
+# Returns: None
+#    Desc: Launch and explorer window to the defined directory
+# -----------------------------------------------------------------------------
+
+def path(node,path):
+    dir = os.path.dirname(path.replace('/','\\'))
+    pl = platform.system()
+    skp = 0
+    cmd = "explorer"
+    if pl == "Windows":
+        cmd = "explorer"
+    elif pl == "Linux":
+        cmd = "nautilus"        
+    elif pl == "Darwin":
+        cmd = "open"
+    else:        
+        skp = 1
+        hou.ui.displayMessage("Can't detect operating system to launch file browser.", severity=hou.severityType.ImportantMessage, default_choice=1, close_choice=1, help="Please PM me and tell me the ouptut from the python shell of: 'import platform, platform.system()' and your command line file browser for your operating system and I can add it.", title="Browse Path")
+    
+
+    if skp == 0 :        
+        if os.path.isdir(dir) :
+            proc = subprocess.Popen( [cmd, dir])
+        else:
+            hou.ui.displayMessage("This directory currently does not exist. " + path, severity=hou.severityType.ImportantMessage, default_choice=1, close_choice=1, help="This means your file has not yet been written to disk.", title="Browse Path")
+            

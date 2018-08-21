@@ -1,4 +1,8 @@
 ""
 INDEX__SECTION	INDEX_SECTION
 houdini.hdalibrary	houdini.hdalibrary
-gamedev_8_8Driver_1vertex__animation__textures	gamedev::Driver/vertex_animation_textures
+LaidlawFX_8_8Driver_1vertex__animation__textures_8_81.4	LaidlawFX::Driver/vertex_animation_textures::1.4
+LaidlawFX_8_8Driver_1vertex__animation__textures_8_81.4_8_8Cop2_1vector__normalize_8_81.0	LaidlawFX::Driver/vertex_animation_textures::1.4::Cop2/vector_normalize::1.0
+LaidlawFX_8_8Driver_1vertex__animation__textures_8_81.4_8_8Vop_1coord__swizzle__quaternion_8_81.0	LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_quaternion::1.0
+LaidlawFX_8_8Driver_1vertex__animation__textures_8_81.4_8_8Vop_1coord__swizzle__vector_8_81.0	LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_vector::1.0
+LaidlawFX_8_8Driver_1vertex__animation__textures_8_81.4_8_8Vop_1vertical__point__index_8_81.0	LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/vertical_point_index::1.0

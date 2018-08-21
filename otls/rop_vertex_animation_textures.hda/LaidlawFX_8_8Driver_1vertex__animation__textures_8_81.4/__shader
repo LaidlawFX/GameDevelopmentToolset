@@ -1,0 +1,42 @@
+# =============================================================================
+# IMPORTS
+# =============================================================================
+
+import hou
+import subprocess
+import os
+import platform
+
+# =============================================================================
+# FUNCTIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#    Name: check(node)
+#  Raises: N/A
+# Returns: None
+#    Desc: Checks if shader exist and creates it otherwise.
+# -----------------------------------------------------------------------------
+
+def check(node):
+    path = os.path.abspath(node.evalParm('path_shader'))
+    if not os.path.isfile(path) :
+        engine = node.evalParm('engine') 
+        method = node.evalParm('method')
+        if   method == 0:
+            smethod = 'soft'
+        elif method == 1:
+            smethod = 'rigid'   
+        elif method == 2:
+            smethod = 'fluid' 
+        elif method == 3:
+            smethod = 'sprite'
+        parm = smethod +"_shader_"+str(engine)
+        node.parm(parm).revertToDefaults()
+        shader = node.evalParm(parm) 
+
+        directory = os.path.dirname(path)
+        if not os.path.exists(directory):
+            os.makedirs(directory)   
+        with open(path,'w+') as f:
+            f.write(shader)            

@@ -1,0 +1,14 @@
+# =============================================================================
+# LOCAL SECTION IMPORTS # http://www.sidefx.com/docs/houdini14.0/hom/assetscripts
+# =============================================================================
+
+import toolutils
+explore     = toolutils.createModuleFromSection( 'explore',     kwargs['type'], '_explore')
+play        = toolutils.createModuleFromSection( 'play',        kwargs['type'], '_play')
+presets     = toolutils.createModuleFromSection( 'presets',     kwargs['type'], '_presets')
+material    = toolutils.createModuleFromSection( 'material',    kwargs['type'], '_material')
+shader      = toolutils.createModuleFromSection( 'shader',      kwargs['type'], '_shader')
+depth       = toolutils.createModuleFromSection( 'depth',       kwargs['type'], '_depth')
+primcount   = toolutils.createModuleFromSection( 'primcount',   kwargs['type'], '_primcount')
+path        = toolutils.createModuleFromSection( 'path',        kwargs['type'], '_path')
+data        = toolutils.createModuleFromSection( 'data',        kwargs['type'], '_data')

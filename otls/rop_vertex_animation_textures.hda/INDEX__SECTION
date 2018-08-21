@@ -1,6 +1,6 @@
-Operator:     gamedev::vertex_animation_textures
-Label:        GameDev Vertex Animation Textures
-Path:         oplib:/gamedev::Driver/vertex_animation_textures?gamedev::Driver/vertex_animation_textures
+Operator:     LaidlawFX::vertex_animation_textures::1.4
+Label:        LaidlawFX Vertex Animation Textures
+Path:         oplib:/LaidlawFX::Driver/vertex_animation_textures::1.4?LaidlawFX::Driver/vertex_animation_textures::1.4
 Icon:         NODEFLAGS_output
 Table:        Driver
 License:      
@@ -10,5 +10,64 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Aug  6 12:27:22 2018
+Modified:     Mon May 28 01:31:46 2018
+
+Operator:     LaidlawFX::Driver/vertex_animation_textures::1.4::vector_normalize::1.0
+Label:        Vector Normalize
+Path:         oplib:/LaidlawFX::Driver/vertex_animation_textures::1.4::Cop2/vector_normalize::1.0?LaidlawFX::Driver/vertex_animation_textures::1.4::Cop2/vector_normalize::1.0
+Icon:         COP2_subnet
+Table:        Cop2
+License:      
+Extra:        
+User:         
+Inputs:       0 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Mar 15 22:35:04 2018
+
+Operator:     LaidlawFX::Driver/vertex_animation_textures::1.4::coord_swizzle_quaternion::1.0
+Label:        Coord Swizzle Quaternion
+Path:         oplib:/LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_quaternion::1.0?LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_quaternion::1.0
+Icon:         VOP_LaidlawFX-Driver-vertex_animation_textures-1.3-coord_swizzle_quaternion-1.0
+Table:        Vop
+License:      
+Extra:        *
+User:         
+Inputs:       0 to 3
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar 18 01:44:38 2018
+
+Operator:     LaidlawFX::Driver/vertex_animation_textures::1.4::coord_swizzle_vector::1.0
+Label:        Coord Swizzle Vector
+Path:         oplib:/LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_vector::1.0?LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/coord_swizzle_vector::1.0
+Icon:         VOP_swizzlevec
+Table:        Vop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 4
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar 18 01:46:16 2018
+
+Operator:     LaidlawFX::Driver/vertex_animation_textures::1.4::vertical_point_index::1.0
+Label:        Vertical Point Index
+Path:         oplib:/LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/vertical_point_index::1.0?LaidlawFX::Driver/vertex_animation_textures::1.4::Vop/vertical_point_index::1.0
+Icon:         VOP_LaidlawFX-Driver-vertex_animation_textures-1.3-vertical_point_index-1.0
+Table:        Vop
+License:      
+Extra:        
+User:         
+Inputs:       0 to 2
+Outputs:      2048
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 20 03:35:32 2018
 

@@ -1,0 +1,17 @@
+# -----------------------------------------------------------------------------
+#    Desc: Set node color. 
+# -----------------------------------------------------------------------------
+
+kwargs["node"].setColor(hou.Color( (0.0, 0.6, 1.0) ) )
+
+# -----------------------------------------------------------------------------
+#    Desc: Set the frange ranges to be non-variable based.
+# -----------------------------------------------------------------------------
+
+fstart = float(hou.hscriptExpression('$FSTART'))
+kwargs["node"].parm('f1').deleteAllKeyframes()
+kwargs["node"].parm('f1').set(fstart)
+
+fend = float(hou.hscriptExpression('$FEND'))
+kwargs["node"].parm('f2').deleteAllKeyframes()
+kwargs["node"].parm('f2').set(fend)
